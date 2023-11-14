@@ -1,0 +1,99 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.product{
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:186px;
+    margin-top: 50px;
+    .Item{
+        .container{
+           display: flex;
+            gap: 128px;
+            .Item__Image{
+                h1{
+                    padding-bottom: 34px;
+                }
+                img{
+                    border-radius: 10px;
+                    box-shadow: 0px 4px 30px 0px rgba(209, 209, 209, 0.5);
+                }
+            }
+           .Item_Info{
+            max-width: 420px;
+
+            h2{
+                padding-bottom: 40px;
+                .mainCost{
+                    padding-right: 100px;
+                    color: #000;
+                    font-size: 70px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 130%;
+                    letter-spacing: 0.6px;
+                }
+                .discount{
+                    padding-right: 80px;
+                    color: #8B8B8B;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 130%; /* 26px */
+                    letter-spacing: 0.6px;
+                }
+                .discount_proc{
+                    color: #FF32A1;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 130%;
+                    letter-spacing: 0.6px;
+                }
+            }
+                button{
+                    border-radius: 10px;
+                    border: 2px solid #393;
+                    background: #393;
+                    padding: 25px 120px 25px 120px;
+                    color:#fff;
+                    color: #FFF;
+                    font-size: 28px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 130%; 
+                }
+                .description{
+                    border-top: 1px dashed #C0C0C0;
+                    margin-top: 40px;
+                    h3{
+                        padding-top: 25px;
+                        padding-bottom: 15px;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 130%; /* 26px */
+                        letter-spacing: 0.6px;
+                    }
+                    h4{
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 130%; /* 26px */
+                        letter-spacing: 0.6px;
+                    }
+                }
+           }
+        }
+    }
+}
+
+
+
+    

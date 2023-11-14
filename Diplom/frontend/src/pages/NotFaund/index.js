@@ -1,0 +1,1 @@
+export {default as NotFaund} from "./NotFaund";
