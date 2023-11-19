@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { ClearProduct,  fetchProduct } from '../../store/asyncAction/customers';
+import { ClearProduct,fetchProduct } from '../../store/asyncAction/customers';
 import { Filter,Footer,Navbar } from '../../components';
 import Product_Item from './ProductInfo/Product_Item';
 import "../../assets/styles/pages/product.scss";
@@ -10,6 +10,7 @@ const Products = () => {
   let product = useSelector(state=>state.product.product); 
   useEffect(()=>{
       dispach(fetchProduct());
+  
       return  ()=>{
         dispach(ClearProduct());
     }
