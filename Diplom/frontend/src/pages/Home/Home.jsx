@@ -3,10 +3,8 @@ import {Navbar,Footer } from "../../components";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategory, ClearCategory,ClearProduct, fetchProduct  } from '../../store/asyncAction/customers';
-
 import Product_Item from './../Products/ProductInfo/Product_Item';
 import Item from './../Catalog/Item';
-import "../../assets/styles/pages/product.scss";
 import "../../assets/styles/pages/home.scss";
 import Gnom_img from "../../assets/images/icons/Gnom.svg";
 
@@ -46,8 +44,8 @@ const Home = () => {
     <>
     <Navbar/>
     <div className="containter">
-      <div className="block1">
-      <div className="block1_content">
+      <div className="sale_Block">
+      <div className="sale_Block_content">
       <h1>Sale</h1>
       <h1>new season</h1>
       <NavLink to="/sales"> <button>Sale</button></NavLink>
@@ -68,11 +66,11 @@ const Home = () => {
             }  
         </div>
     </div>
-    <div className="block2">
-            <div className="block2_content1">
+    <div className="baner_block">
+            <div className="baner_block_left">
             <img src={Gnom_img} />
             </div>
-            <div className="block2_content2">
+            <div className="baner_block_right">
             <h1>5% off <h2>on the first order</h2></h1>
             <div>
             <input type="text" onChange={(event)=>{SetInputSele(event.target.value)}} defaultValue={'+49'}/>
@@ -81,8 +79,8 @@ const Home = () => {
             </div>
     </div>
     <div>
-    <div className='container'>
-        <div className='category' style={{marginBottom:'30px'}}>
+    <div className='product_container'>
+        <div className='product' style={{marginBottom:'30px'}}>
             {
                 product && product.map((item=>{
                   return item['id']<5?

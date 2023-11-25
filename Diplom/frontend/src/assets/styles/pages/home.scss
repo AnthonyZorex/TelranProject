@@ -5,22 +5,76 @@
     font-family: 'Montserrat';
 }
 
+.item_Info{
+    position: relative;
+    img{
+        display: block;
+    }
+    .overlay {
+        position: absolute; 
+        bottom:105px; 
+        top: 0;
+        border-radius: 12px;
+        color: #f1f1f1; 
+        width: 100%;
+        height: 350px;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 20px;  
+        text-align: center;
+        button{
+            margin-top:250px; 
+            border-radius: 21px;
+            border: 2px solid #393;
+            cursor: pointer;
+            color: #393;
+            padding: 12px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%; /* 23.4px */
+            letter-spacing: 0.54px;
+        }
+      }
+}
+  .item_Info:hover .overlay {
+    opacity: 1;
+  }
+.item{
+    h2{
+        color: #000;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%; 
+        letter-spacing: 0.54px;
+        text-align: center;
+        margin-top: 20px;
+       
+    }
+    img{
+        border-radius: 20px; 
+    }
+}
 .containter{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 1440px;
-    .block2{
+    .baner_block{
         background: linear-gradient(263deg, #393 -0.43%, #006300 104.36%);
         height: 476px;
         margin-top: 50px;
         display:flex;
         margin-bottom: 107px;
         gap: 263px;
-        .block2_content1{
+        .baner_block_left{
             padding: 27px;
         }
-        .block2_content2{
+        .baner_block_right{
             text-align: start;
             width: 480px;
             h1{
@@ -112,11 +166,58 @@
     display: flex;
     margin-top: 20px;
   }
-    .block1{
+  .product{
+    grid-template-columns: repeat(4, 318px);
+    grid-column-gap: 20px;
+    grid-row-gap: 58px;
+    display: grid;
+    img{
+        border-radius:20px;
+        box-shadow: 5px 5px 10px
+    }
+    h2{
+        color: #3A3A3A;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 20.8px */
+        letter-spacing: 0.48px;
+        margin-top: 18px;
+        .mainCost{
+            color: #000;
+            margin-right: 50px;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: 0.6px;
+        }
+        .discount{
+            padding-right: 43px;
+            color: #8B8B8B;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 130%; /* 26px */
+            letter-spacing: 0.6px;
+            text-decoration-line: strikethrough;
+        }
+        .discount_proc{
+            color: #FF32A1;
+            font-size: 20px;    
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: 0.6px;
+        }
+    }
+  
+}
+    .sale_Block{
         margin-left: auto;
         margin-right: auto;
         height: calc(400px + (638 - 400) * ( (80vw - 380px) / ( 1440 - 380) ));
-        max-width: calc(400px + (1440 - 400) * ( (80vw - 380px) / ( 1440 - 380) ));
+        max-width: calc(400px + (1440 - 400) * ( (100vw - 380px) / ( 1440 - 380) ));
         background-blend-mode: multiply;
         background-image: url('./../../images/icons/SliderFon.svg');
         background-position:center;
@@ -124,7 +225,7 @@
         background-size: cover;
         background-color:rgba(0, 0, 0, 0.40);
 
-        .block1_content{
+        .sale_Block_content{
             padding-top: 116px;
             h1{
                 color: #FFF;
@@ -157,7 +258,112 @@
         }
     }
 }
-@media (max-width: 760px) {
+@media (max-width:1400px) {
+    
+    .containter{
+        text-align: center;
+        align-items: center;
+        width: auto;
+        .baner_block{
+            gap:50px;
+        }
+       .category {
+            border-radius: 20px;
+            grid-column-gap: 32px;
+            text-align: center;
+            display: grid;
+            grid-template-columns: 300px 300px 300px;
+            margin-top: 20px;
+            
+        }
+        .product{
+            grid-template-columns: repeat(3, 300px);
+            grid-column-gap: 32px;
+            grid-row-gap: 58px;
+            display: grid;
+            text-align: center;
+            justify-content: center;
+            
+            .overlay{
+                width: 320px;
+                  
+                  button{
+                   margin-left: auto;
+                   margin-right: auto;
+                  }
+               }
+        }
+        
+    }
+}
+@media(max-width:1000px){
+
+        .containter .catalog_rout {
+            justify-content: center;
+            margin-top: 28px;
+            gap: 40px;
+            display: flex;
+        }
+        .containter .baner_block .baner_block_right {
+            text-align: start;
+            width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 45px;
+        }
+
+        .containter{
+            text-align: center;
+            align-items: center;
+            width: auto;
+            .catalog{
+                .catalog_rout{
+                    justify-content: start;
+                }
+            }
+           .category {
+                border-radius: 20px;
+                grid-column-gap: 32px;
+                text-align: center;
+                display: grid;
+                grid-template-columns: 300px 300px;
+                margin-top: 20px;
+                
+            }
+            .product{
+                grid-template-columns: repeat(2, 300px);
+                grid-column-gap: 32px;
+                grid-row-gap: 58px;
+                display: grid;
+                text-align: center;
+                justify-content: center;
+                
+                .overlay{
+                    opacity: 1;
+                    background: transparent;
+                    margin-left: 20px;
+                    width: 300px;
+                    button{
+                    justify-content: start;
+                    }
+                }
+            }
+            
+        }
+        .containter .baner_block {
+            img{
+                height:200px;
+            }
+            background: linear-gradient(263deg, #393 -0.43%, #006300 104.36%);
+            height:auto;
+            margin-top: 50px;
+            display: block;
+            margin-bottom: 107px;
+           
+        }
+}
+
+@media (max-width: 700px) {
 
     .containter .catalog_rout {
         justify-content: center;
@@ -165,7 +371,7 @@
         gap: 40px;
         display: flex;
     }
-    .containter .block2 .block2_content2 {
+    .containter .baner_block .baner_block_right {
         text-align: start;
         width: 480px;
         margin-left: auto;
@@ -175,10 +381,8 @@
     .containter{
         text-align: center;
         align-items: center;
-        
         width: auto;
        .category {
-        
             border-radius: 20px;
             gap: 20px;
             text-align: center;
@@ -186,9 +390,42 @@
             margin-top: 20px;
         }
     }
-   
-    .containter .block2 {
-       
+    .product_container{
+        .product {
+            border-radius: 20px;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-top: 20px;
+            .item_Info{
+                margin-top: 60px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    img{
+                        margin-left: auto;
+                        margin-right: auto;
+                    }    
+            }
+            .overlay {
+                opacity:1;
+                background: transparent;
+                width: 300px;
+                button{
+                    display: block;
+                    margin-top: 250px;
+                    
+                    
+                }
+            }
+        }
+       } 
+        
+    .containter .baner_block{
         img{
             height:200px;
         }
@@ -197,6 +434,5 @@
         margin-top: 50px;
         display: block;
         margin-bottom: 107px;
-       
     }
 }

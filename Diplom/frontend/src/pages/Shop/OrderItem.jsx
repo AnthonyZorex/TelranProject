@@ -56,8 +56,7 @@ function OrderItem({setSumOrder,sumOrder,data:{id,image,title,price,discont_pric
         <div>
         <h2 >
         <span className='mainCost'>{discont_price==null ? price*count+"$" : discont_price*count +"$"}</span> 
-        <span style={{textDecoration:discont_price!=null?'line-through':"none"}} className="discount">{discont_price==null ? "" : price+"$"}</span> 
-        <span className='discount_proc'>{discont_price!=null?sale+"%" :""}</span> 
+        <span style={{textDecoration:discont_price!=null?'line-through':"none"}} className="discount">{discont_price==null ? "" : price+"$"}</span>  
         </h2>
         </div>
         </div>

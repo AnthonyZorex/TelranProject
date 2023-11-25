@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className='footer'>
         <div className='footer_container'>
-            <div className='footer_container__item1'>
+            <div className='footer_container__left'>
                 <h2>Contact</h2>
                 <h1>+49 999 999 99 99</h1>
                 <div className='footer_container_iconBlock' >
@@ -22,7 +22,7 @@ function Footer() {
                </div>
                 </div>
             </div>
-            <div className='footer_container__item2'>
+            <div className='footer_container__right'>
                 <h2>Address</h2>
                 <a>Linkstraße 2, 8 OG, 10785,<br></br> Berlin, Deutschland</a>
               <h6>Working Hours:</h6>

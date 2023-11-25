@@ -103,15 +103,6 @@ function Filter({value}) {
     setIsChecked(value);
   },[])
 
- /*  useEffect(()=>{
-if(priceTo!=0 && priceFrom !=0){
-        if(priceTo.length>1)
-        dispach({type:SORT_PRICE_SECOND_ARG_PRODUCT,payload:priceTo});
-        if(priceFrom.length>0){
-          dispach({type:SORT_PRICE_FIRST_ARG_PRODUCT,payload:priceFrom});
-        }
-      }
-  },[]) */
   return (
     <div className='filter'> 
     <h4>Price</h4> 
