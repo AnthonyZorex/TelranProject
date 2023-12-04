@@ -5,7 +5,7 @@
     font-family: 'Montserrat';
 }
 .main{
-    width: 1440px;
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
@@ -186,4 +186,82 @@
     margin-top: -39px;
     margin-left: 200px;
     position: absolute;
+}
+
+@media (max-width:1400px){
+    .main .container .container_content {
+        display: block;
+    }
+    .main .container .container_content .right {
+        border-radius: 21px;
+        margin-top: 50px;
+        border: 2px solid #000;
+        text-align: start;
+        max-height: 400px;
+        max-width: 510px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width:900px){
+    .main .container .container_content {
+        display: block;
+     
+    }
+    .main .container .container_content .right {
+        border-radius: 21px;
+        margin-top: 50px;
+        border: 2px solid #000;
+        text-align: start;
+        max-height: 400px;
+        max-width: 510px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .main .container .container_content .left .container {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+    }
+    .close {
+        margin-top: -60%;
+        margin-left: 60%;
+        position: absolute;
+    }
+    .main .container h2 {
+        margin-left: 65%;
+        margin-top: 16px;
+        color: #000;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        padding-bottom: 34px;
+        cursor: pointer;
+    }
+    .main .container .container_content .left h1 {
+        color: #3A3A3A;
+        font-size: 18px;
+        margin-top: 0px;
+        font-style: normal;
+        font-weight: 600;
+        max-width: 318px;
+        line-height: 130%;
+        letter-spacing: 0.54px;
+        padding-bottom: 20px;
+    }
+    .main .container .container_content .left .container .countItem {
+        border-radius: 12px;
+        display: flex;
+        border: 1px solid #000;
+       max-width: 140px;
+       margin-left: 40px;
+        max-height: 40px;
+    }
+    .mainCost{
+        margin-left: 40px;
+        margin-top: 50px;
+    }
+}
+@media (max-width:600px){
+
 }
