@@ -6,12 +6,11 @@ import { useSelector,useDispatch } from 'react-redux';
 import OrderItem from './OrderItem';
 
 
+
 function Shop() {
  
   let [sumOrder,setSumOrder] = useState(0);
   let order = useSelector(state=>state.order.order);
-
-
   return (
     <>
        <Navbar/>
@@ -29,7 +28,7 @@ function Shop() {
         <div className=''>
           {
             order && order.map((item)=>{
-              return <OrderItem setSumOrder={setSumOrder} sumOrder={sumOrder} data={item} />
+              return  <OrderItem key={item['id']} setSumOrder={setSumOrder} sumOrder={sumOrder} data={item} />
             })
           }
           </div>

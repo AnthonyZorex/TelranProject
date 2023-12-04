@@ -27,7 +27,7 @@ function Product_Item({data:{id,image,title,price,discont_price,description,cate
   return (
     <div className='item_Info'>
      <img src={"http://localhost:3333"+image} height={350} width={318} />
-     <div class="overlay"><button onClick={()=>addItem()}>Add to cart</button></div>
+     <div className="overlay"><button onClick={()=>addItem()}>Add to cart</button></div>
      <h2 >
     <span className='mainCost'>{discont_price==null ? price+"$" : discont_price +"$"}</span> 
     <span style={{textDecoration:discont_price!=null?'line-through':"none"}} className="discount">{discont_price==null ? "" : price+"$"}</span> 
