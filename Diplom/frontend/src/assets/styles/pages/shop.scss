@@ -43,14 +43,14 @@
                 margin-top: 0px;
                 font-style: normal;
                 font-weight: 600;
-                max-width: 318px;
+                max-width: 260px;
                 line-height: 130%; /* 23.4px */
                 letter-spacing: 0.54px;
                 padding-bottom: 71px;
             }
             .container{
                 display: grid;
-                grid-template-columns: repeat(3,auto);
+                grid-template-columns: repeat(3,260px);
                 h2{
                     margin: 0px;
                 }

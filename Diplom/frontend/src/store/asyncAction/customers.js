@@ -1,5 +1,5 @@
 import { CLEAN_CATEGORY, addCategoriAction} from "../categoryReducer"
-import { LOAD_ITEMS } from "../orderReducer";
+import { LOAD_ITEMS, SEND_ORDER } from "../orderReducer";
 import { CLEAN_PRODUCT, SORT_SALE_PRODUCT,SORT_PRICE_TO_PRODUCT,addProductAction,SORT_PRICE_FROM_PRODUCT } from "../productReducer";
 
 export const fetchCategory=()=>{
@@ -24,7 +24,11 @@ export function ClearCategory() {
       type: CLEAN_CATEGORY,
     };
   }
-
+  export function OrderSend() {
+    return {
+      type: SEND_ORDER,
+    };
+  }
   export function Load_Items() {
     return {
       type: LOAD_ITEMS,

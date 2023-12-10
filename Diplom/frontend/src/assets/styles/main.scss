@@ -12,6 +12,19 @@ button{
     cursor: pointer;
 }
 
+.navbar__right{
+    h6{
+        position: absolute;
+        margin-left: 20px;
+        background: #FF32A1;
+        margin-top: -15px;
+        border-radius: 10px;
+        min-width:15px;
+        padding-left: 5px;
+        padding-top: 1px;
+        min-height: 15px;
+    }
+}
 li{
     list-style: none;
 }
@@ -72,6 +85,7 @@ a{
         }
     
         &-menu {
+            display:flex;
             gap: 40px;
     
             &__item {

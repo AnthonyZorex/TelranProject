@@ -1,9 +1,10 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useRef } from 'react'
 import { Footer, Navbar } from '../../components'
 import "./../../assets/styles/pages/shop.scss"
 import { NavLink } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import OrderItem from './OrderItem';
+import { OrderSend } from '../../store/asyncAction/customers';
 
 
 
@@ -11,6 +12,28 @@ function Shop() {
  
   let [sumOrder,setSumOrder] = useState(0);
   let order = useSelector(state=>state.order.order);
+  let dispach = useDispatch();
+  let [inputSale,SetInputSele]=useState("");
+  let NumberInput = useRef(null);
+  const postData = async (url = '', data = {}) => {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    return response.json(); 
+  }
+
+  const SendOrder =()=>{
+    postData("http://localhost:3333/order/send",{inputSale,order}) .then((data) => {
+      console.log(data); 
+    });
+    setSumOrder(0);
+    NumberInput.current.value="+49";
+    dispach(OrderSend());
+ }
   return (
     <>
        <Navbar/>
@@ -35,8 +58,8 @@ function Shop() {
           <div className='right'>
             <h3>Order details</h3>
             <h4>Total <span className='total'>{sumOrder}<span>$</span></span> </h4>
-            <input type='text' placeholder='Phone number' />
-            <button>Order</button>
+            <input type='text' ref={NumberInput} onChange={(event)=>{SetInputSele(event.target.value)}} defaultValue={'+49'} placeholder='Phone number' />
+            <button onClick={()=>SendOrder()}>Order</button>
             </div>
         </div>
         

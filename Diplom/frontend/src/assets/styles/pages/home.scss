@@ -76,7 +76,7 @@
         }
         .baner_block_right{
             text-align: start;
-            width: 480px;
+           max-width: 480px;
             h1{
                 height: 179px;
                 margin-top: 44px;
@@ -306,7 +306,7 @@
         }
         .containter .baner_block .baner_block_right {
             text-align: start;
-            width: 480px;
+            max-width: 480px;
             margin-left: auto;
             margin-right: auto;
             padding-bottom: 45px;
@@ -373,7 +373,7 @@
     }
     .containter .baner_block .baner_block_right {
         text-align: start;
-        width: 480px;
+        max-width: 480px;
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 45px;
@@ -434,5 +434,116 @@
         margin-top: 50px;
         display: block;
         margin-bottom: 107px;
+    }
+}
+
+@media (max-width: 560px) 
+{
+    .containter .catalog_rout {
+        justify-content: center;
+        margin-top: 28px;
+        gap: 40px;
+        display: flex;
+    }
+    .containter .baner_block .baner_block_right {
+        text-align: start;
+        max-width: 480px;
+        min-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 45px;
+    }
+    .containter{
+        text-align: center;
+        align-items: center;
+        width: auto;
+       .category {
+            border-radius: 20px;
+            gap: 20px;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+        }
+    }
+    .product_container{
+        .product {
+            border-radius: 20px;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-top: 20px;
+            .item_Info{
+                margin-top: 60px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    img{
+                        margin-left: auto;
+                        margin-right: auto;
+                    }    
+            }
+            .overlay {
+                opacity:1;
+                background: transparent;
+                width: 300px;
+                button{
+                    display: block;
+                    margin-top: 250px;
+                    
+                    
+                }
+            }
+        }
+       } 
+        
+    .containter .baner_block{
+        img{
+            height:200px;
+        }
+        background: linear-gradient(263deg, #393 -0.43%, #006300 104.36%);
+        height:auto;
+        margin-top: 50px;
+        display: block;
+        margin-bottom: 107px;
+    }
+
+    .containter .baner_block .baner_block_right input {
+        padding: 26px 50px 26px;
+        margin-top: 46px;
+        max-width: 370px;
+        height: 75.441px;
+        flex-shrink: 0;
+        border-radius: 25.147px;
+        background: #FFF;
+        outline: none;
+        border: none;
+        color: #6C6C6C;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: 0.54px;
+    }
+
+    .containter .baner_block .baner_block_right button {
+        cursor: pointer;
+        margin-top: 30px;
+        border-radius: 25.147px;
+        border: 2.395px solid #FFF;
+        padding: 20px 118px 20px 118px;
+        background: transparent;
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: 0.862px;
+        max-width: 370px;
     }
 }

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ADD_ITEM_ORDER } from '../../../store/orderReducer';
 
-function Product_Item({data:{id,image,title,price,discont_price,description,categoryId}}) {
+function Product_Item({productHeader,isStateProduct,data:{id,image,title,price,discont_price,description,categoryId}}) {
   
   
   let dispach = useDispatch();
@@ -23,6 +23,11 @@ function Product_Item({data:{id,image,title,price,discont_price,description,cate
 
   const addItem =()=>{
     dispach({type:ADD_ITEM_ORDER,payload:item});
+    isStateProduct.current.style.display="block";
+    productHeader.current.style.marginTop ="50px";
+    setTimeout(()=>{
+      isStateProduct.current.style.display="none";
+    },1000)
   }
   return (
     <div className='item_Info'>

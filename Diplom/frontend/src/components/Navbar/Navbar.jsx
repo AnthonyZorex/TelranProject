@@ -1,18 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import { Icon} from "./../Icon";
 import nav_logo from "./../../assets/images/icons/nav_icon.svg";
-import {Link, NavLink}  from"react-router-dom";
+import { NavLink}  from"react-router-dom";
+import { useSelector } from 'react-redux';
 
 function Navbar() {
 
   let [stateMenu,setStateMenu] = useState(true);
+  let mainMenu = useRef(null);
+  let order = useSelector(state=>state.order.order);
   
   function nv(){
-   if(stateMenu===false)
+   if(stateMenu===false){
     setStateMenu(true);
-    else
-    setStateMenu(false);
+    mainMenu.current.style.display="none";
+   }
+    else{
+      mainMenu.current.style.display="flex";
+      setStateMenu(false); 
+    }}
+  function ScreenWidth(){
+    mainMenu.current.style.display="flex";
   }
+ /*  useEffect(()=>{
+    if(window.innerWidth>800){
+      setStateMenu(true);
+      ScreenWidth();
+      console.log("Hello!");
+    }
+  },[]) */
+  
+
   
 
   return (
@@ -30,14 +48,15 @@ function Navbar() {
             <div className="navbar-mobile">
                 <div className="navbar-mobile__label" onClick={()=>nv()}>
                    <Icon iconName="menu" className="icon__menu" />
-                   <ul className="navbar-menu" style={{display:stateMenu===false?"none":"flex"}}>
+                   <ul className="navbar-menu" ref={mainMenu}  >
                   <li><NavLink to="/" className="navbar-menu__item navbar-menu__item--active">Main Page</NavLink></li>
                   <li><NavLink to="/products" className="navbar-menu__item">All products</NavLink></li>
                   <li><NavLink to="/sales" className="navbar-menu__item">All sales</NavLink></li>
                 </ul>
                 </div>
               </div>
-              <NavLink to="/shop">  <Icon iconName='shop_nav' width='30' height='30' /></NavLink>
+              <NavLink to="/shop">  <Icon iconName='shop_nav' width='30' height='30' /> <h6 title={order.length}>{order.length}</h6></NavLink>
+             
             </div>
           </div>
         </div >

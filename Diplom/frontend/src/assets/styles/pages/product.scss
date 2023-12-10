@@ -6,6 +6,25 @@
     font-family: 'Montserrat';
 }
 
+.alert {
+    display: none;
+    max-width: 250px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    animation-duration: 1s;
+  animation-name: moved;
+  }
+  
+  @keyframes moved {
+    from{
+        margin-left: 0%;
+    }
+  to{
+    margin-left: 10%;
+  }
+  }
 .item_Info{
     position: relative;
     img{
