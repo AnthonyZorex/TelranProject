@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react'
+import React, { useState,useRef, useEffect } from 'react'
 import { Icon} from "./../Icon";
 import nav_logo from "./../../assets/images/icons/nav_icon.svg";
 import { NavLink}  from"react-router-dom";
@@ -9,7 +9,7 @@ function Navbar() {
   let [stateMenu,setStateMenu] = useState(true);
   let mainMenu = useRef(null);
   let order = useSelector(state=>state.order.order);
-  
+
   function nv(){
    if(stateMenu===false){
     setStateMenu(true);
@@ -19,12 +19,14 @@ function Navbar() {
       mainMenu.current.style.display="flex";
       setStateMenu(false); 
     }}
-  function ScreenWidth(){
-    mainMenu.current.style.display="flex";
-  }
-
-  return (
     
+    window.addEventListener("resize",()=>{
+      if(window.innerWidth>700){
+        mainMenu.current.style.display="flex";
+      }
+    })
+   
+  return (  
     <nav className="navbar">
         <div className="container">
           <div className="navbar__content">
