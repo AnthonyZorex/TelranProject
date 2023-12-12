@@ -22,16 +22,6 @@ function Navbar() {
   function ScreenWidth(){
     mainMenu.current.style.display="flex";
   }
- /*  useEffect(()=>{
-    if(window.innerWidth>800){
-      setStateMenu(true);
-      ScreenWidth();
-      console.log("Hello!");
-    }
-  },[]) */
-  
-
-  
 
   return (
     

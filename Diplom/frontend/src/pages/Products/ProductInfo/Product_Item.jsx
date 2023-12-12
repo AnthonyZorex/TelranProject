@@ -27,7 +27,7 @@ function Product_Item({productHeader,isStateProduct,data:{id,image,title,price,d
     productHeader.current.style.marginTop ="50px";
     setTimeout(()=>{
       isStateProduct.current.style.display="none";
-    },1000)
+    },3000)
   }
   return (
     <div className='item_Info'>

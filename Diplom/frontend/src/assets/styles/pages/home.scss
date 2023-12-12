@@ -5,6 +5,13 @@
     font-family: 'Montserrat';
 }
 
+.InputEror{
+    color:rgb(255, 153, 0);
+    position: absolute;
+    margin-top: 20px;
+    font-size: 14px;
+    display: none;
+}
 .item_Info{
     position: relative;
     img{
@@ -414,6 +421,7 @@
             .overlay {
                 opacity:1;
                 background: transparent;
+                margin-left:30%;
                 width: 300px;
                 button{
                     display: block;
@@ -446,7 +454,7 @@
         display: flex;
     }
     .containter .baner_block .baner_block_right {
-        text-align: start;
+        text-align: center;
         max-width: 480px;
         min-width: 380px;
         margin-left: auto;
@@ -487,6 +495,7 @@
                     }    
             }
             .overlay {
+                margin-left:22%;
                 opacity:1;
                 background: transparent;
                 width: 300px;

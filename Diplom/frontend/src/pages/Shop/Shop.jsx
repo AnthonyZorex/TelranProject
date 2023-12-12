@@ -11,6 +11,7 @@ import { OrderSend } from '../../store/asyncAction/customers';
 function Shop() {
  
   let [sumOrder,setSumOrder] = useState(0);
+  let inputEror = useRef(null);
   let order = useSelector(state=>state.order.order);
   let dispach = useDispatch();
   let [inputSale,SetInputSele]=useState("");
@@ -27,13 +28,23 @@ function Shop() {
   }
 
   const SendOrder =()=>{
-    postData("http://localhost:3333/order/send",{inputSale,order}) .then((data) => {
-      console.log(data); 
-    });
-    setSumOrder(0);
-    NumberInput.current.value="+49";
-    dispach(OrderSend());
+    if(inputSale.length>9 & order.length>0){
+      postData("http://localhost:3333/order/send",{inputSale,order}) .then((data) => {
+        console.log(data); 
+      });
+      inputEror.current.style.display="none";
+      setSumOrder(0);
+      NumberInput.current.value="+49";
+      dispach(OrderSend());
+    }
+    else{
+      inputEror.current.style.display="block";
+    }
  }
+ const Sale = (event)=>{
+  SetInputSele(event.target.value);
+  inputEror.current.style.display="none";
+}
   return (
     <>
        <Navbar/>
@@ -58,7 +69,8 @@ function Shop() {
           <div className='right'>
             <h3>Order details</h3>
             <h4>Total <span className='total'>{sumOrder}<span>$</span></span> </h4>
-            <input type='text' ref={NumberInput} onChange={(event)=>{SetInputSele(event.target.value)}} defaultValue={'+49'} placeholder='Phone number' />
+            <h6 ref={inputEror} className="InputEror">The number is incorrect or the products are not selected!</h6>
+            <input type='text' ref={NumberInput} onChange={event=>Sale(event)} defaultValue={'+49'} placeholder='Phone number' />
             <button onClick={()=>SendOrder()}>Order</button>
             </div>
         </div>

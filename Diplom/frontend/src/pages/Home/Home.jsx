@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react"
+import React,{useEffect, useRef, useState} from "react"
 import {Navbar,Footer } from "../../components";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +11,8 @@ import Gnom_img from "../../assets/images/icons/Gnom.svg";
 const Home = () => {
 
   let [inputSale,SetInputSele]=useState("");
+  let inputEror = useRef(null);
+  let input = useRef(null);
   const postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
       method: 'POST',
@@ -23,9 +25,15 @@ const Home = () => {
   }
 
   const saleSend = ()=>{
-    postData("http://localhost:3333/sale/send",{inputSale}) .then((data) => {
-      console.log(data); 
-    });
+    if(inputSale.length>9){
+      postData("http://localhost:3333/sale/send",{inputSale}) .then((data) => {
+      });
+      inputEror.current.style.display="none";
+      input.current.value ="+49";
+    }
+    else{
+      inputEror.current.style.display="block";
+    }
   }
 
     let dispach = useDispatch();
@@ -40,6 +48,10 @@ const Home = () => {
         }
     },[])
 
+    const Sale = (event)=>{
+      SetInputSele(event.target.value);
+      inputEror.current.style.display="none";
+    }
   return (
     <>
     <Navbar/>
@@ -73,7 +85,9 @@ const Home = () => {
             <div className="baner_block_right">
             <h1>5% off <h2>on the first order</h2></h1>
             <div>
-            <input type="text" onChange={(event)=>{SetInputSele(event.target.value)}} defaultValue={'+49'}/>
+            <h6 ref={inputEror} className="InputEror">The number is incorrect!</h6>
+            <input type="text" ref={input} onChange={event=>Sale(event)} defaultValue={'+49'}/>
+
             </div>
             <button onClick={()=>saleSend()}>Get a discount</button>
             </div>

@@ -11,10 +11,16 @@
     max-width: 250px;
     margin-top: 40px;
     padding: 20px;
-    background-color: #f44336;
+    background-color: #393;
     color: white;
-    animation-duration: 1s;
+    animation-duration: 3s;
   animation-name: moved;
+  svg{
+    margin-left:99px;
+    position: absolute;
+    margin-top: -90px;
+    
+  }
   }
   
   @keyframes moved {
